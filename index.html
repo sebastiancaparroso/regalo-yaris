@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>19 • Yaris Lorena</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020714;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ESTRELLAS */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.25;
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px);
+    background-size:100px 100px;
+    animation:stars 20s linear infinite;
+    z-index:0;
+}
+
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(100px);
+    }
+}
+
+/* SECCIONES */
+
+section{
+    min-height:100vh;
+    padding:90px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:1;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+}
+
+/* INTRO */
+
+.hero{
+    text-align:center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35,110,200,.35),
+            transparent 45%
+        );
+}
+
+.small-title{
+    font-size:11px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:#8fc5ff;
+    margin-bottom:25px;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(80px,15vw,170px);
+    font-weight:500;
+    line-height:.85;
+}
+
+h1 span{
+    display:block;
+    font-size:clamp(35px,7vw,75px);
+    font-style:italic;
+    margin-top:25px;
+}
+
+.subtitle{
+    max-width:650px;
+    margin:35px auto;
+    color:#b9c6d8;
+    line-height:1.8;
+}
+
+.button{
+    display:inline-block;
+    padding:15px 30px;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    font-size:11px;
+    transition:.3s;
+    background:rgba(255,255,255,.04);
+    cursor:pointer;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.1);
+}
+
+/* TEXTO */
+
+.chapter{
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#75b6ff;
+    margin-bottom:20px;
+}
+
+.title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(40px,7vw,75px);
+    font-weight:500;
+    margin-bottom:30px;
+}
+
+.text{
+    color:#c3ccda;
+    line-height:2;
+    font-size:16px;
+    max-width:750px;
+}
+
+.quote{
+    margin-top:35px;
+    padding:25px;
+    border-left:2px solid #4e98e8;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:24px;
+    color:#e8f3ff;
+}
+
+/* FOTOS */
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:45px;
+}
+
+.photo{
+    height:350px;
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
+    background:
+        linear-gradient(
+            145deg,
+            #102746,
+            #06101f
+        );
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photo-placeholder{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#718198;
+    font-size:12px;
+    padding:20px;
+}
+
+.photo img:not([src=""]) + .photo-placeholder{
+    display:none;
+}
+
+/* 19 COSAS */
+
+.reasons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:40px;
+}
+
+.reason{
+    padding:25px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    transition:.3s;
+}
+
+.reason:hover{
+    transform:translateY(-5px);
+    border-color:#4f9be9;
+}
+
+.number{
+    color:#70b2ff;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.reason p{
+    margin-top:12px;
+    color:#d0d8e5;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* 19 */
+
+.big-number{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:clamp(150px,30vw,330px);
+    line-height:.7;
+    text-align:center;
+}
+
+/* FINAL */
+
+.final{
+    text-align:center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(30,100,190,.35),
+            transparent 50%
+        );
+}
+
+/* MUSICA */
+
+.music-button{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:100;
+    background:rgba(2,7,20,.85);
+    border:1px solid rgba(255,255,255,.2);
+    color:white;
+    border-radius:50px;
+    padding:12px 18px;
+    cursor:pointer;
+}
+
+/* PANEL */
+
+#editor{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(12px);
+    z-index:500;
+    display:none;
+    overflow:auto;
+    padding:30px 15px;
+}
+
+.editor-box{
+    max-width:800px;
+    margin:auto;
+    background:#071426;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:30px;
+}
+
+.editor-box h2{
+    font-family:'Playfair Display',serif;
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.editor-description{
+    color:#94a4ba;
+    font-size:13px;
+    margin-bottom:30px;
+}
+
+.field{
+    margin-bottom:25px;
+}
+
+.field label{
+    display:block;
+    color:#8fc5ff;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+    background:#020914;
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    padding:13px;
+    border-radius:8px;
+    font-family:Montserrat;
+}
+
+.field textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.save{
+    background:#287bc7;
+    border:none;
+}
+
+.close{
+    margin-left:10px;
+}
+
+.editor-section{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:25px;
+    margin-top:25px;
+}
+
+/* ANIMACIONES */
+
+.fade{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* CELULAR */
+
+@media(max-width:700px){
+
+    .photo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .photo{
+        height:400px;
+    }
+
+    .reasons{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 18px;
+    }
+
+    .editor-box{
+        padding:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     REPRODUCTOR
+========================================= -->
+
+<audio id="music" loop src="musica/Melendi - La Promesa  Letra   Te amo.mp3"></audio>
+<button class="music-button" onclick="toggleMusic()">
+    🎵 Música
+</button>
+
+
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<section class="hero">
+
+<div class="container fade">
+
+<div class="small-title">
+Una pequeña película para ti
+</div>
+
+<h1>
+19
+<span id="nameHero">
+Yaris Lorena
+</span>
+</h1>
+
+<p class="subtitle" id="introText">
+Hay personas que llegan a nuestra vida hace poco...
+y aun así consiguen convertirse en alguien muy especial.
+</p>
+
+<a href="#capitulo1" class="button">
+COMENZAR
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CAPÍTULO 1
+========================================= -->
+
+<section id="capitulo1">
+
+<div class="container fade">
+
+<div class="chapter">
+Capítulo 01
+</div>
+
+<div class="title">
+Hace poco...
+</div>
+
+<p class="text" id="chapter1Text">
+
+Hace apenas unos meses nuestros caminos se cruzaron.
+Y aunque todavía me falta muchísimo por conocer de ti,
+hay algo que tengo bastante claro:
+
+Todo lo que he conocido de ti hasta ahora ha sido maravilloso.
+
+</p>
+
+<div class="quote" id="quote1">
+
+“A veces no hace falta mucho tiempo para descubrir
+que alguien merece un lugar especial.”
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CAPÍTULO 2
+========================================= -->
+
+<section>
+
+<div class="container fade">
+
+<div class="chapter">
+Capítulo 02
+</div>
+
+<div class="title">
+La persona que descubrí
+</div>
+
+<p class="text" id="chapter2Text">
+
+Descubrí una mujer hermosa, una gran amiga,
+una buena compañera y, sobre todo,
+una persona con una forma de ser que me gusta muchísimo.
+
+Sin darme cuenta, en poquito tiempo
+te convertiste en alguien muy especial para mí.
+
+</p>
+
+
+<div class="photo-grid">
+
+<div class="photo">
+
+<img id="photo1" src="fotos/foto1.jpg">
+
+<div class="photo-placeholder">
+Foto 1
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img id="photo2" src="fotos/foto2.jpg">
+
+<div class="photo-placeholder">
+Foto 2
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img id="photo3" src="fotos/foto3.jpg">
+
+<div class="photo-placeholder">
+Foto 3
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CAPÍTULO 3
+========================================= -->
+
+<section>
+
+<div class="container fade">
+
+<div class="chapter">
+Capítulo 03
+</div>
+
+<div class="title">
+19 cosas que me gustan de ti
+</div>
+
+<div class="reasons" id="reasons">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CAPÍTULO 4
+========================================= -->
+
+<section>
+
+<div class="container fade">
+
+<div class="chapter">
+Capítulo 04
+</div>
+
+<div class="title">
+La foto que no pude tomar
+</div>
+
+<p class="text" id="chapter4Text">
+
+Quería estar contigo en este día,
+tomar unas fotos bonitas y compartir contigo
+un pedacito de tus 19 años.
+
+Pero ese día tengo que asistir a un retiro espiritual,
+y aunque me da tristeza no poder acompañarte como quería,
+no quería dejar pasar la oportunidad de hacerte saber
+lo especial que eres para mí.
+
+</p>
+
+<div class="quote" id="quote4">
+
+“Perdón por no poder estar ahí como lo había imaginado.
+Esta vez no podré tomarte esas fotos,
+pero quise crear algo que pudiera guardar
+un poquito de todo lo bonito que pienso de ti.”
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     CAPÍTULO 5
+========================================= -->
+
+<section>
+
+<div class="container fade">
+
+<div class="chapter">
+Capítulo 05
+</div>
+
+<div class="title">
+Un nuevo año para ti
+</div>
+
+<p class="text" id="chapter5Text">
+
+Sé que estos últimos cumpleaños no han sido los mejores,
+y por eso deseo de corazón que tus 19 sean diferentes.
+
+Que este nuevo año llegue con momentos
+que sí quieras recordar,
+personas que sepan valorar tu corazón,
+sueños que comiencen a cumplirse
+y muchísimas razones para sonreír.
+
+</p>
+
+<div class="quote" id="quote5">
+
+“Nunca olvides lo mucho que vales.
+Mereces cosas bonitas, personas bonitas
+y momentos que hagan que tu corazón esté en paz.”
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL
+========================================= -->
+
+<section class="final">
+
+<div class="container fade">
+
+<div class="big-number">
+19
+</div>
+
+<div class="title">
+Feliz cumpleaños,
+<span id="nameFinal">
+Yaris Lorena
+</span>
+</div>
+
+<p class="text" id="finalText" style="margin:auto">
+
+No sé exactamente qué vaya a pasar entre nosotros,
+ni qué nos tenga preparado la vida.
+
+Pero sí sé algo:
+
+Me alegra muchísimo haberte conocido.
+
+</p>
+
+<div class="quote" id="finalQuote">
+
+“Gracias por llegar a mi vida, aunque haya sido hace poquito.
+Espero que este sea uno de esos cumpleaños
+que sí quieras recordar. 💙”
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     EDITOR
+========================================= -->
+
+<div id="editor">
+
+<div class="editor-box">
+
+<h2>⚙️ Editar regalo</h2>
+
+<p class="editor-description">
+Personaliza la página de Yaris.
+Los cambios se guardan automáticamente en este navegador.
+</p>
+
+
+<div class="field">
+
+<label>Nombre</label>
+
+<input
+id="editName"
+value="Yaris Lorena"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Mensaje inicial</label>
+
+<textarea id="editIntro">
+Hay personas que llegan a nuestra vida hace poco...
+y aun así consiguen convertirse en alguien muy especial.
+</textarea>
+
+</div>
+
+
+<div class="editor-section">
+
+<div class="field">
+
+<label>Capítulo 1</label>
+
+<textarea id="editChapter1">
+Hace apenas unos meses nuestros caminos se cruzaron.
+Y aunque todavía me falta muchísimo por conocer de ti,
+hay algo que tengo bastante claro:
+
+Todo lo que he conocido de ti hasta ahora ha sido maravilloso.
+</textarea>
+
+</div>
+
+<div class="field">
+
+<label>Frase capítulo 1</label>
+
+<textarea id="editQuote1">
+“A veces no hace falta mucho tiempo para descubrir
+que alguien merece un lugar especial.”
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="editor-section">
+
+<div class="field">
+
+<label>Capítulo 2</label>
+
+<textarea id="editChapter2">
+Descubrí una mujer hermosa, una gran amiga,
+una buena compañera y, sobre todo,
+una persona con una forma de ser que me gusta muchísimo.
+
+Sin darme cuenta, en poquito tiempo
+te convertiste en alguien muy especial para mí.
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="editor-section">
+
+<div class="field">
+
+<label>Mensaje sobre la foto que no pude tomar</label>
+
+<textarea id="editChapter4">
+Quería estar contigo en este día,
+tomar unas fotos bonitas y compartir contigo
+un pedacito de tus 19 años.
+
+Pero ese día tengo que asistir a un retiro espiritual,
+y aunque me da tristeza no poder acompañarte como quería,
+no quería dejar pasar la oportunidad de hacerte saber
+lo especial que eres para mí.
+</textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>Disculpa</label>
+
+<textarea id="editQuote4">
+“Perdón por no poder estar ahí como lo había imaginado.
+Esta vez no podré tomarte esas fotos,
+pero quise crear algo que pudiera guardar
+un poquito de todo lo bonito que pienso de ti.”
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="editor-section">
+
+<div class="field">
+
+<label>Mensaje motivacional</label>
+
+<textarea id="editChapter5">
+Sé que estos últimos cumpleaños no han sido los mejores,
+y por eso deseo de corazón que tus 19 sean diferentes.
+
+Que este nuevo año llegue con momentos
+que sí quieras recordar,
+personas que sepan valorar tu corazón,
+sueños que comiencen a cumplirse
+y muchísimas razones para sonreír.
+</textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>Frase motivacional</label>
+
+<textarea id="editQuote5">
+“Nunca olvides lo mucho que vales.
+Mereces cosas bonitas, personas bonitas
+y momentos que hagan que tu corazón esté en paz.”
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="editor-section">
+
+<div class="field">
+
+<label>Mensaje final</label>
+
+<textarea id="editFinal">
+No sé exactamente qué vaya a pasar entre nosotros,
+ni qué nos tenga preparado la vida.
+
+Pero sí sé algo:
+
+Me alegra muchísimo haberte conocido.
+</textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>Última frase</label>
+
+<textarea id="editFinalQuote">
+“Gracias por llegar a mi vida, aunque haya sido hace poquito.
+Espero que este sea uno de esos cumpleaños
+que sí quieras recordar. 💙”
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="editor-section">
+
+<div class="field">
+
+<label>Música</label>
+
+<input
+type="file"
+id="musicFile"
+accept="audio/*"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Foto 1</label>
+
+<input type="file" id="file1" accept="image/*">
+
+</div>
+
+
+<div class="field">
+
+<label>Foto 2</label>
+
+<input type="file" id="file2" accept="image/*">
+
+</div>
+
+
+<div class="field">
+
+<label>Foto 3</label>
+
+<input type="file" id="file3" accept="image/*">
+
+</div>
+
+</div>
+
+
+<button class="button save" onclick="saveChanges()">
+💾 GUARDAR CAMBIOS
+</button>
+
+<button class="button close" onclick="closeEditor()">
+CERRAR
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   19 COSAS
+========================================= */
+
+const reasons = [
+
+"Tu forma de ser.",
+"Lo buena amiga que eres.",
+"La manera en que haces sentir a quienes te rodean.",
+"Tu forma de mirar la vida.",
+"Tu sonrisa.",
+"Lo linda que eres por dentro y por fuera.",
+"Tu manera de ser compañera.",
+"La tranquilidad que transmites.",
+"Que seas auténtica.",
+"Los pequeños detalles que te hacen diferente.",
+"Tu forma de hacer especial un momento cualquiera.",
+"La persona que eres con tus amigos.",
+"Tu manera de seguir adelante.",
+"Que tengas un corazón bonito.",
+"Tu esencia.",
+"Las conversaciones contigo.",
+"Que en tan poco tiempo hayas dejado una huella.",
+"Que simplemente seas tú.",
+"Y porque, aunque todavía no sé qué pueda pasar, me gustas demasiado."
+
+];
+
+function createReasons(){
+
+    const container =
+        document.getElementById("reasons");
+
+    container.innerHTML="";
+
+    reasons.forEach((reason,index)=>{
+
+        const div=document.createElement("div");
+
+        div.className="reason";
+
+        div.innerHTML=`
+
+        <div class="number">
+        ${String(index+1).padStart(2,"0")}
+        </div>
+
+        <p>
+        ${reason}
+        </p>
+
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+createReasons();
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{threshold:.15});
+
+
+document
+.querySelectorAll(".fade")
+.forEach(element=>observer.observe(element));
+
+
+/* =========================================
+   MÚSICA
+========================================= */
+
+const music =
+document.getElementById("music");
+
+document
+.getElementById("musicFile")
+.addEventListener("change",function(){
+
+    const file=this.files[0];
+
+    if(!file)return;
+
+    music.src=
+        URL.createObjectURL(file);
+
+});
+
+
+function toggleMusic(){
+
+    if(!music.src){
+
+        alert(
+        "Primero agrega una canción desde ⚙️ Editar regalo."
+        );
+
+        return;
+
+    }
+
+    if(music.paused){
+
+        music.play();
+
+    }else{
+
+        music.pause();
+
+    }
+
+}
+
+
+/* =========================================
+   PANEL DE EDICIÓN
+========================================= */
+
+/*
+   Para abrir el panel:
+
+   PC:
+   Ctrl + Shift + E
+
+*/
+
+document.addEventListener("keydown",function(event){
+
+    if(
+        event.ctrlKey &&
+        event.shiftKey &&
+        event.key.toLowerCase()==="e"
+    ){
+
+        openEditor();
+
+    }
+
+});
+
+
+function openEditor(){
+
+    document
+    .getElementById("editor")
+    .style.display="block";
+
+}
+
+
+function closeEditor(){
+
+    document
+    .getElementById("editor")
+    .style.display="none";
+
+}
+
+
+/* =========================================
+   GUARDAR
+========================================= */
+
+function saveChanges(){
+
+    const data={
+
+        name:
+        document.getElementById("editName").value,
+
+        intro:
+        document.getElementById("editIntro").value,
+
+        chapter1:
+        document.getElementById("editChapter1").value,
+
+        quote1:
+        document.getElementById("editQuote1").value,
+
+        chapter2:
+        document.getElementById("editChapter2").value,
+
+        chapter4:
+        document.getElementById("editChapter4").value,
+
+        quote4:
+        document.getElementById("editQuote4").value,
+
+        chapter5:
+        document.getElementById("editChapter5").value,
+
+        quote5:
+        document.getElementById("editQuote5").value,
+
+        final:
+        document.getElementById("editFinal").value,
+
+        finalQuote:
+        document.getElementById("editFinalQuote").value
+
+    };
+
+    localStorage.setItem(
+        "regaloYaris",
+        JSON.stringify(data)
+    );
+
+
+    applyChanges();
+
+    alert(
+        "💙 Cambios guardados correctamente."
+    );
+
+}
+
+
+/* =========================================
+   APLICAR CAMBIOS
+========================================= */
+
+function applyChanges(){
+
+    const saved =
+        localStorage.getItem("regaloYaris");
+
+    if(!saved)return;
+
+    const data =
+        JSON.parse(saved);
+
+
+    document
+    .getElementById("nameHero")
+    .textContent=data.name;
+
+    document
+    .getElementById("nameFinal")
+    .textContent=data.name;
+
+    document
+    .getElementById("introText")
+    .textContent=data.intro;
+
+    document
+    .getElementById("chapter1Text")
+    .textContent=data.chapter1;
+
+    document
+    .getElementById("quote1")
+    .textContent=data.quote1;
+
+    document
+    .getElementById("chapter2Text")
+    .textContent=data.chapter2;
+
+    document
+    .getElementById("chapter4Text")
+    .textContent=data.chapter4;
+
+    document
+    .getElementById("quote4")
+    .textContent=data.quote4;
+
+    document
+    .getElementById("chapter5Text")
+    .textContent=data.chapter5;
+
+    document
+    .getElementById("quote5")
+    .textContent=data.quote5;
+
+    document
+    .getElementById("finalText")
+    .textContent=data.final;
+
+    document
+    .getElementById("finalQuote")
+    .textContent=data.finalQuote;
+
+}
+
+
+/* =========================================
+   CARGAR CAMBIOS
+========================================= */
+
+function loadEditor(){
+
+    const saved =
+        localStorage.getItem("regaloYaris");
+
+    if(!saved)return;
+
+    const data =
+        JSON.parse(saved);
+
+
+    document
+    .getElementById("editName")
+    .value=data.name;
+
+    document
+    .getElementById("editIntro")
+    .value=data.intro;
+
+    document
+    .getElementById("editChapter1")
+    .value=data.chapter1;
+
+    document
+    .getElementById("editQuote1")
+    .value=data.quote1;
+
+    document
+    .getElementById("editChapter2")
+    .value=data.chapter2;
+
+    document
+    .getElementById("editChapter4")
+    .value=data.chapter4;
+
+    document
+    .getElementById("editQuote4")
+    .value=data.quote4;
+
+    document
+    .getElementById("editChapter5")
+    .value=data.chapter5;
+
+    document
+    .getElementById("editQuote5")
+    .value=data.quote5;
+
+    document
+    .getElementById("editFinal")
+    .value=data.final;
+
+    document
+    .getElementById("editFinalQuote")
+    .value=data.finalQuote;
+
+}
+
+
+loadEditor();
+applyChanges();
+
+
+/* =========================================
+   FOTOS
+========================================= */
+
+function loadPhoto(inputId,imgId){
+
+    document
+    .getElementById(inputId)
+    .addEventListener("change",function(){
+
+        const file=this.files[0];
+
+        if(!file)return;
+
+        const reader=
+            new FileReader();
+
+        reader.onload=function(e){
+
+            document
+            .getElementById(imgId)
+            .src=e.target.result;
+
+            localStorage.setItem(
+                imgId,
+                e.target.result
+            );
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+loadPhoto("file1","photo1");
+loadPhoto("file2","photo2");
+loadPhoto("file3","photo3");
+
+
+function loadSavedPhotos(){
+
+    ["photo1","photo2","photo3"]
+    .forEach(id=>{
+
+        const saved=
+            localStorage.getItem(id);
+
+        if(saved){
+
+            document
+            .getElementById(id)
+            .src=saved;
+
+        }
+
+    });
+
+}
+
+
+loadSavedPhotos();
+
+</script>
+
+</body>
+</html>
